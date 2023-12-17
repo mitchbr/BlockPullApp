@@ -1,0 +1,14 @@
+{
+  "display": "standalone",
+  "lang": "en",
+  "name": "blockpullapp",
+  "short_name": "blockpullapp",
+  "start_url": "/?utm_source=web_app_manifest",
+  "related_applications": [
+    {
+      "platform": "itunes",
+      "id": "com.mitchbr.blockpullapp"
+    }
+  ],
+  "prefer_related_applications": true
+}
