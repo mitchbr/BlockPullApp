@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/block-pull-app/static/js/main.01159709.js",
-    "static/js/237.5813eb84.js": "/block-pull-app/static/js/237.5813eb84.js",
-    "index.html": "/block-pull-app/index.html",
-    "manifest.json": "/block-pull-app/manifest.json",
-    "serve.json": "/block-pull-app/serve.json",
-    "main.01159709.js.map": "/block-pull-app/static/js/main.01159709.js.map",
-    "237.5813eb84.js.map": "/block-pull-app/static/js/237.5813eb84.js.map"
+    "main.js": "/BlockPullApp/static/js/main.01159709.js",
+    "static/js/237.5813eb84.js": "/BlockPullApp/static/js/237.5813eb84.js",
+    "index.html": "/BlockPullApp/index.html",
+    "manifest.json": "/BlockPullApp/manifest.json",
+    "serve.json": "/BlockPullApp/serve.json",
+    "main.01159709.js.map": "/BlockPullApp/static/js/main.01159709.js.map",
+    "237.5813eb84.js.map": "/BlockPullApp/static/js/237.5813eb84.js.map"
   },
   "entrypoints": [
     "static/js/237.5813eb84.js",
