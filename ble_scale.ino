@@ -1,14 +1,12 @@
 #include <ArduinoBLE.h>
-#include <EEPROM.h>
 
 #include "HX711.h"
 
-#define DOUT 6
-#define CLK 5
+#define DOUT 2
+#define CLK 3
 
 HX711 scale;
 
-int calibration_addr = 0;
 float calibration_factor = 14778;
 
 BLEService scaleService("181D");
@@ -25,15 +23,11 @@ long timeStart = 0;
 
 void setup()
 {
-  Serial.begin(9600);
-  while (!Serial)
-    ;
-
-  int read_calibration = EEPROM.read(calibration_addr);
-  Serial.print("Read value from EEPROM: ");
-  Serial.println(read_calibration);
+  // Serial.begin(9600);
+  // while (!Serial);
 
   /* Scale Setup */
+  // Serial.println("Setting up scale");
   scale.begin(DOUT, CLK);
   scale.set_scale(calibration_factor);
   scale.tare();
@@ -41,12 +35,12 @@ void setup()
   /* BLE setup */
   if (!BLE.begin())
   {
-    Serial.println("starting BLE failed!");
-    while (1)
-      ;
+    // Serial.println("starting BLE failed!");
+    while (1);
   }
 
   BLE.setLocalName("BlockPuller");
+  BLE.setDeviceName("BlockPuller");
   BLE.setAdvertisedService(scaleService);
   scaleService.addCharacteristic(scaleWeightChar);
   scaleService.addCharacteristic(scaleMessageChar);
@@ -55,7 +49,7 @@ void setup()
 
   BLE.advertise();
 
-  Serial.println("Bluetooth® device active, waiting for connections...");
+  // Serial.println("Bluetooth® device active, waiting for connections...");
 }
 
 void loop()
@@ -64,13 +58,13 @@ void loop()
 
   if (central)
   {
-    Serial.print("Connected to central: ");
-    Serial.println(central.address());
+    // Serial.print("Connected to central: ");
+    // Serial.println(central.address());
 
     commWithCentral(central);
 
-    Serial.print("Disconnected from central: ");
-    Serial.println(central.address());
+    // Serial.print("Disconnected from central: ");
+    // Serial.println(central.address());
   }
 }
 
@@ -90,12 +84,14 @@ void commWithCentral(BLEDevice central)
 
 void updateScaleValue()
 {
+  // Serial.println("Reading scale...");
   float scaleValue = scale.get_units();
+  // Serial.println(scaleValue);
 
   if (trunc(10. * scaleValue) != trunc(10. * oldScaleValue))
   {
-    Serial.print("Reading: ");
-    Serial.println(scaleValue);
+    // Serial.print("Reading: ");
+    // Serial.println(scaleValue);
     scaleWeightChar.writeValue(scaleValue);
     oldScaleValue = scaleValue;
   }
@@ -105,20 +101,20 @@ void readCentralMessages()
 {
   if (scaleMessageChar.written())
   {
-    Serial.print("Value received from central: ");
+    // Serial.print("Value received from central: ");
     int value = scaleMessageChar.value();
-    Serial.println(value);
+    // Serial.println(value);
 
     if (value == 1)
     {
       scale.tare();
-      Serial.print("Scale Tared");
+      // Serial.print("Scale Tared");
     }
     else if (value == 2)
     {
       scale.calibrate_scale(20);
-      Serial.print("Calibration factor: ");
-      Serial.println(scale.get_scale());
+      // Serial.print("Calibration factor: ");
+      // Serial.println(scale.get_scale());
     }
   }
 }
