@@ -19,7 +19,7 @@ Essentially, the block puller is a force plate hooked up to a strain guage, whic
 
 ## Pictures
 
-Some more pictures of what I've built. I forgot to take pictures along the way, but I am building a second now and plan to add more pictures as this one is completed. The construction uses 9 layers of 1/8th inch solid wood. Each layer is cut to it's required shape prior to glueing, this way I can fit cavities inside for the circuits, battery, and switches/charging port. Finally, the layers are glued together into two halves, so I can sandwich the force plate between the two layers. The two halves are then held together with bolts.
+Some more pictures of what I've built. I forgot to take pictures along the way, but I am building a second now and plan to add more pictures as this one is completed. The construction uses 10 layers of 1/8th inch solid wood. Each layer is cut to it's required shape prior to glueing, this way I can fit cavities inside for the circuits, battery, and switches/charging port. Finally, the layers are glued together into two halves, so I can sandwich the force plate between the two layers. The two halves are then held together with bolts. Final dimensions are about 2.5 x 3 x 1.25 inches.
 
 <img width="628" alt="Screenshot 2024-05-16 at 2 09 13 PM" src="https://github.com/mitchbr/BlockPullApp/assets/40349575/e6b10ae2-9bc1-4138-b595-15a54bc28012">
 
