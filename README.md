@@ -1,36 +1,28 @@
-# TypeScript Example
+# Block Puller
 
-<p>
-  <!-- iOS -->
-  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  <!-- Android -->
-  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  <!-- Web -->
-  <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-</p>
+A small arduino project, I wanted to replicate a [tindeq progessor](https://tindeq.com/product/progressor/). This tool, in addition to something like a tension block, is a great method for finger strength training with a compact package. Finger training is a vital part of training for rock climbing, and the block puller allows for high precision, as well as the ability to train anywhere anytime.
 
-```sh
-npx create-react-native-app -t with-typescript
-```
+If you're curious what it looks like to use one of these, [here](https://www.youtube.com/watch?v=RMn2DxFDHQI) is a great video of the tindeq progessor in action.
 
-TypeScript is a superset of JavaScript which gives you static types and powerful tooling in Visual Studio Code including autocompletion and useful inline warnings for type errors.
 
-## 🚀 How to use
+## Circuit Diagram
+Essentially, the block puller is a force plate hooked up to a strain guage, which then transmits data via an Arduino through Bluetooth Low Energy (BLE) to a mobile phone or computer. There is a quick sketch below, with components left to right being:
+- 600 mAh LiPo batter
+- Power switch on the positive wire between the battery and Seeed Xiao
+- [Seeed Xiao](https://www.google.com/search?q=seeed+xiao+ble&rlz=1C5GCCM_en&oq=seeed+xiao+ble&gs_lcrp=EgZjaHJvbWUqCQgAEEUYOxiABDIJCAAQRRg7GIAEMgcIARAAGIAEMgcIAhAAGIAEMgcIAxAAGIAEMgcIBBAAGIAEMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg8qAIAsAIA&sourceid=chrome&ie=UTF-8), running Arduino
+- HX711
+- A force plate with a strain guage on it
 
-#### Creating a new project
+<img width="1215" alt="Screenshot 2024-05-16 at 2 03 26 PM" src="https://github.com/mitchbr/BlockPullApp/assets/40349575/5c0b5749-48f7-4530-82c0-d43e52420f72">
 
-- Install the CLI: `npm i -g expo-cli`
-- Create a project: `npx create-react-native-app -t with-typescript`
-- `cd` into the project
 
-### Adding TypeScript to existing projects
 
-- Create a blank TypeScript config: `touch tsconfig.json`
-- Run `yarn start` or `npm run start` to automatically configure TypeScript
-- Rename files to TypeScript, `.tsx` for React components and `.ts` for plain typescript files
+## Pictures
 
-> 💡 You can disable the TypeScript setup in Expo CLI with the environment variable `EXPO_NO_TYPESCRIPT_SETUP=1 expo start`
+Some more pictures of what I've built. I forgot to take pictures along the way, but I am building a second now and plan to add more pictures as this one is completed
 
-## 📝 Notes
+<img width="628" alt="Screenshot 2024-05-16 at 2 09 13 PM" src="https://github.com/mitchbr/BlockPullApp/assets/40349575/e6b10ae2-9bc1-4138-b595-15a54bc28012">
 
-- [Expo TypeScript guide](https://docs.expo.dev/versions/latest/guides/typescript/)
+<img width="666" alt="Screenshot 2024-05-16 at 2 09 32 PM" src="https://github.com/mitchbr/BlockPullApp/assets/40349575/45d4be27-b318-4dd8-b46f-328c3b9a0385">
+
+<img width="398" alt="Screenshot 2024-05-16 at 2 09 47 PM" src="https://github.com/mitchbr/BlockPullApp/assets/40349575/12085bd1-895c-4692-8bcd-5e02efa6aab7">
